@@ -1,0 +1,28 @@
+Setup
+
+1. Restore the SQL file "hiring_challenge_transactions.sql" to your MySQL database.
+2. Once the backup is complete, update the connection strings in the configuration file.In the appsettings.json or appsettings.Development.json file, locate the
+    "ConnectionStrings" section and modify the "DefaultConnection" value with your MySQL server, username, password, and database name. 
+
+    "ConnectionStrings": {
+  "DefaultConnection": "server=Your_server;user=your_user;pwd=your_password;database=hiring_challenge;"
+}
+
+
+3.After updating the connection strings, you can run the API.
+4.Once the API is running, you will see two endpoints: 
+    a) Login Endpoint: Use this endpoint to obtain an authentication token. The default username and password values have already been set.
+    b) Transaction Endpoint: This is the endpoint for retrieving transactions.
+
+5) Start by running the Login API to obtain the authentication token. Use the default username and password provided.
+6) After receiving the token, click the "Authorize" button in the Swagger UI. A popup will appear prompting you to enter the bearer token.
+7) Once you have successfully authorized, you can start sending requests to the "transaction" API using the provided token.
+8) Transaction API
+
+       a) BaseCurrency: Specifies the currency for which we want to retrieve transactions.
+	 b) Month: Specifies the month for which we want to retrieve transactions.	
+	 c) Year: Specifies the year for which we want to retrieve transactions.
+	 d) Page: Specifies the page number of the transaction results to return.
+       e) PageSize: Specifies the number of transactions to include per page.
+
+These parameters allow you to customize the query for retrieving transactions based on the desired base currency, month, year, and pagination settings.
